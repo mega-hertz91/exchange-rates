@@ -18,6 +18,11 @@ class RateAdapter
         'previous' => 'Previous',
     ];
 
+    /**
+     * Transform API data to model data
+     * @param array $array
+     * @return array
+     */
     public static function transformToModel(array $array): array
     {
         return [

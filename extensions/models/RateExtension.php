@@ -41,4 +41,14 @@ class RateExtension extends Rate
             throw new Exception('Update failed');
         }
     }
+
+    /**
+     * Return daily trend
+     * @return bool
+     */
+    public function getTrend(): bool
+    {
+        $diff = round($this->value - $this->previous, 2);
+        return $diff > 0;
+    }
 }

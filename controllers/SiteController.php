@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-use app\components\RateConverter;
 use app\extensions\models\RateExtension;
+use app\models\Update;
 use app\providers\RateProvider;
 use app\services\ExchangeAPI;
 use app\services\UpdateService;
@@ -35,6 +35,9 @@ class SiteController extends Controller
         $rates = RateProvider::getCollection();
         return $this->render('index', [
             'rates' => $rates,
+            'lastUpdate' => Update::find()->orderBy(['id' => SORT_DESC])->one(),
+            'usd' => RateExtension::findOne(['char_code' => 'USD']),
+            'eur' => RateExtension::findOne(['char_code' => 'EUR']),
         ]);
     }
 }
