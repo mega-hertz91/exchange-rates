@@ -31,19 +31,4 @@ class m210511_135227_create_rate_table extends Migration
     {
        $this->dropTable('rate');
     }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m210511_135227_Rate cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }

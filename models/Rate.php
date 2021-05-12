@@ -2,26 +2,26 @@
 
 namespace app\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "rate".
  *
  * @property int $id
  * @property string $uid
- * @property int $num_node
+ * @property int $num_code
  * @property string $char_code
  * @property int $nominal
  * @property string $name
  * @property float $value
  * @property float $previous
  */
-class Rate extends \yii\db\ActiveRecord
+class Rate extends ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'rate';
     }
@@ -29,12 +29,12 @@ class Rate extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            [['uid', 'num_node', 'char_code', 'nominal', 'name', 'value', 'previous'], 'required'],
-            [['num_node', 'nominal'], 'default', 'value' => null],
-            [['num_node', 'nominal'], 'integer'],
+            [['uid', 'num_code', 'char_code', 'nominal', 'name', 'value', 'previous'], 'required'],
+            [['num_code', 'nominal'], 'default', 'value' => null],
+            [['num_code', 'nominal'], 'integer'],
             [['value', 'previous'], 'number'],
             [['uid', 'name'], 'string', 'max' => 255],
             [['char_code'], 'string', 'max' => 25],
@@ -44,12 +44,12 @@ class Rate extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ID',
             'uid' => 'Uid',
-            'num_node' => 'Num Node',
+            'num_code' => 'Num Code',
             'char_code' => 'Char Code',
             'nominal' => 'Nominal',
             'name' => 'Name',
