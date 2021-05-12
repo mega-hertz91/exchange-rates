@@ -6,7 +6,7 @@ $db = require __DIR__ . '/db.local.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'converter'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -51,6 +51,9 @@ $config = [
             ],
         ],
         */
+        'converter' => [
+            'class' => 'app\components\RateConverter',
+        ],
     ],
     'params' => $params,
 ];

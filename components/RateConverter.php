@@ -1,11 +1,13 @@
 <?php
 
 namespace app\components;
+use yii\base\Component;
+
 /**
  * Currency conversion class
  * @package app\components
  */
-class RateConverter
+class RateConverter extends Component
 {
     const AUD = 0.017213;
     const AZN = 0.022911;

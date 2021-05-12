@@ -37,9 +37,4 @@ class SiteController extends Controller
             'rates' => $rates,
         ]);
     }
-
-    public function actionTest()
-    {
-        return RateConverter::convert(RateConverter::USD, RateConverter::AUD);
-    }
 }
