@@ -17,9 +17,12 @@ class UpdateService
     public static function getUpdated(): bool
     {
         $model = Update::find()->orderBy(['id' => SORT_DESC])->one();
-        $now = strtotime('now');
-        $last = strtotime($model->updated_at);
-
-        return abs($last - $now) > self::INTERVAL;
+        if (!$model) {
+            return true;
+        } else {
+            $now = strtotime('now');
+            $last = strtotime($model->updated_at);
+            return abs($last - $now) > self::INTERVAL;
+        }
     }
 }

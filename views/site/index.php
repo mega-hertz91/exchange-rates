@@ -16,6 +16,7 @@ $this->title = 'Exchange rates';
         <h1>Курсы валют ЦБ РФ на <?=Yii::$app->formatter->asDate('now', 'dd.MM.YYYY')?></h1>
         <?php echo GridView::widget([
             'dataProvider' => $rates,
+            'summary' => false,
             'columns' => [
                 [
                     'attribute' => 'num_code',

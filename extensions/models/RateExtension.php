@@ -30,7 +30,7 @@ class RateExtension extends Rate
                     $model->value = $values['value'];
                     $model->previous = $values['previous'];
                 } else {
-                    $model = new self(RateAdapter::transformToModel($values));
+                    $model = new self($values);
                 }
                 $model->save();
             }
