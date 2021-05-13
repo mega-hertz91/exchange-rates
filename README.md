@@ -54,7 +54,7 @@ rapidly creating small projects.
    
 2. Применить миграции для БД 
    ```
-   php yii artisan migrate
+   php yii migrate
    ```
 3. Настроить Crone на ручку /rate/update с интервалом времени, либо оставить как есть. Приложение само обновляется с интервалом в 1 час, чтобы не создавать нагрузку на сервер  API. 
 
